@@ -18,6 +18,7 @@ const Login = () => {
         if ("authentication_token" in response.data) {
           localStorage.setItem("loginData", JSON.stringify(response.data));
           history.replace("/");
+          window.location.reload();
         }
       })
       .catch((error) => {
