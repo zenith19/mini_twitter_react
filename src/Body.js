@@ -8,6 +8,7 @@ import SignUp from "./Signup";
 import Login from "./Login";
 import Logout from "./Logout";
 import Followings from "./Followings";
+import Followers from "./Followers";
 
 const Body = () => {
   return (
@@ -36,6 +37,9 @@ const Body = () => {
         </Route>
         <Route exact path="/followings">
           <Followings />
+        </Route>
+        <Route exact path="/followers">
+          <Followers />
         </Route>
       </Switch>
     </div>

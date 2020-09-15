@@ -26,7 +26,12 @@ const Sidebar = () => {
           )}
           {localStorage.getItem("loginData") !== null && (
             <NavItem>
-              <Link to="/followings">User Following</Link>
+              <Link to="/followings">Following</Link>
+            </NavItem>
+          )}
+          {localStorage.getItem("loginData") !== null && (
+            <NavItem>
+              <Link to="/followers">Followers</Link>
             </NavItem>
           )}
         </Nav>
