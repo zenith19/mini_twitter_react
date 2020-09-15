@@ -7,6 +7,7 @@ import Profile from "./Profile";
 import SignUp from "./Signup";
 import Login from "./Login";
 import Logout from "./Logout";
+import Followings from "./Followings";
 
 const Body = () => {
   return (
@@ -32,6 +33,9 @@ const Body = () => {
         </Route>
         <Route exact path="/logout">
           <Logout />
+        </Route>
+        <Route exact path="/followings">
+          <Followings />
         </Route>
       </Switch>
     </div>

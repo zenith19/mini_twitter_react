@@ -14,12 +14,19 @@ const Sidebar = () => {
           <NavItem>
             <Link to="/users">Users List</Link>
           </NavItem>
-          <NavItem>
-            <Link to="/signup">Sign Up</Link>
-          </NavItem>
-          {(localStorage.getItem("loginData")===null) && (
+          {localStorage.getItem("loginData") === null && (
+            <NavItem>
+              <Link to="/signup">Sign Up</Link>
+            </NavItem>
+          )}
+          {localStorage.getItem("loginData") === null && (
             <NavItem>
               <Link to="/login">Log in</Link>
+            </NavItem>
+          )}
+          {localStorage.getItem("loginData") !== null && (
+            <NavItem>
+              <Link to="/followings">User Following</Link>
             </NavItem>
           )}
         </Nav>
