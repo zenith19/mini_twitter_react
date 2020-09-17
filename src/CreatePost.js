@@ -11,11 +11,11 @@ const CreatePost = () => {
   let loginData = {};
   if (localStorage.getItem("loginData")) {
     loginData = JSON.parse(localStorage.getItem("loginData"));
-  } 
-  
+  }
+
   let tempPost = {};
   const handleFormSubmit = (data) => {
-    if(localStorage.getItem("loginData")===null){
+    if (localStorage.getItem("loginData") === null) {
       history.replace("/login");
     }
     tempPost = { ...data, user_id: loginData.id };
@@ -25,7 +25,12 @@ const CreatePost = () => {
   useEffect(() => {
     if (Object.keys(newPost).length !== 0) {
       axios
-        .post("http://localhost:3001/v1/posts", newPost)
+        .post("http://localhost:3001/v1/posts", newPost, {
+          headers: {
+            token: JSON.parse(localStorage.getItem("loginData"))
+              .authentication_token,
+          }
+        })
         .then((response) => {
           window.location.reload();
         })

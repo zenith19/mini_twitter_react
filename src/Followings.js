@@ -7,7 +7,12 @@ const Followings = () => {
   let [users, setUsers] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/v1/user_followings/" + userId)
+      .get("http://localhost:3001/v1/user_followings/" + userId, {
+        headers: {
+          token: JSON.parse(localStorage.getItem("loginData"))
+            .authentication_token,
+        }
+      })
       .then((response) => {
         setUsers(response.data);
       })

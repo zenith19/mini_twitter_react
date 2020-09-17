@@ -15,7 +15,7 @@ const CreateComment = (props) => {
 
   let tempComment = {};
   const handleFormSubmit = (data) => {
-    if(localStorage.getItem("loginData")===null){
+    if (localStorage.getItem("loginData") === null) {
       history.replace("/login");
     }
     tempComment = { ...data, post_id: props.postId, user_id: loginData.id };
@@ -25,7 +25,12 @@ const CreateComment = (props) => {
   useEffect(() => {
     if (Object.keys(newComment).length !== 0) {
       axios
-        .post("http://localhost:3001/v1/comments", newComment)
+        .post("http://localhost:3001/v1/comments", newComment, {
+          headers: {
+            token: JSON.parse(localStorage.getItem("loginData"))
+              .authentication_token,
+          }
+        })
         .then((response) => {
           console.log(response);
           window.location.reload();
