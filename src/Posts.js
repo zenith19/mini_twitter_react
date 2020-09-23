@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Post from "./Component/Post";
-import CreatePost from "./CreatePost"
+import CreatePost from "./CreatePost";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -14,10 +14,13 @@ const Posts = () => {
   }, []);
 
   let reverseArr = [...posts].reverse();
+
   return (
     <div>
       <CreatePost />
-      {reverseArr.map(post => <Post key={post.id} item={post}/> )}
+      {reverseArr.map((post) => (
+        <Post key={post.id} item={post} />
+      ))}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import "./CreatePost.css";
 import { useHistory } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 const CreatePost = () => {
   const [newPost, setNewPost] = useState({});
@@ -16,7 +17,7 @@ const CreatePost = () => {
   let tempPost = {};
   const handleFormSubmit = (data) => {
     if (localStorage.getItem("loginData") === null) {
-      history.replace("/login");
+      history.push("/login");
     }
     tempPost = { ...data, user_id: loginData.id };
     setNewPost(tempPost);
@@ -29,7 +30,7 @@ const CreatePost = () => {
           headers: {
             token: JSON.parse(localStorage.getItem("loginData"))
               .authentication_token,
-          }
+          },
         })
         .then((response) => {
           window.location.reload();
@@ -61,9 +62,14 @@ const CreatePost = () => {
         />
       </div>
       {errors.content && <span>This field is required</span>}
-      <button type="submit" className="btn btn-primary btn-lg btn-block">
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        fullWidth={true}
+      >
         Tweet
-      </button>
+      </Button>
     </form>
   );
 };
