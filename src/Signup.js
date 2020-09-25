@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import "./Signup.css";
+import "./style/Signup.css";
 import axios from "axios";
 
 const Signup = () => {

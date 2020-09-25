@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import "./CreatePost.css";
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import "./CreatePost.css";
 
 const CreatePost = () => {
   const [newPost, setNewPost] = useState({});

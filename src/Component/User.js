@@ -1,5 +1,5 @@
 import React from "react";
-import "./User.css";
+import "../style/User.css";
 import {Link} from "react-router-dom"
 
 const User = (props) => {
