@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./CurrentUser.css";
+import "./style/CurrentUser.css";
 
 const CurrentUser = () => {
   const [currentUser, setCurrentUser] = useState({});
