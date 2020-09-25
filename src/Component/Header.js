@@ -1,6 +1,5 @@
 import React from "react";
-import CurrentUser from "./CurrentUser";
-import "./CurrentUser.css";
+import CurrentUser from "../CurrentUser";
 import { AppBar, Typography, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 

@@ -1,15 +1,15 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Users from "./Users";
-import Posts from "./Posts";
-import FullPost from "./FullPost";
-import Profile from "./Profile";
-import SignUp from "./Signup";
-import Login from "./Login";
-import Logout from "./Logout";
-import Followings from "./Followings";
-import Followers from "./Followers";
-import Follow from "./Follow";
+import Users from "../Users";
+import Posts from "../Posts";
+import FullPost from "../FullPost";
+import Profile from "../Profile";
+import SignUp from "../Signup";
+import Login from "../Login";
+import Logout from "../Logout";
+import Followings from "../Followings";
+import Followers from "../Followers";
+import Follow from "../Follow";
 
 const Body = () => {
   return (
